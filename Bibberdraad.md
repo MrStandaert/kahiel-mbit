@@ -2,19 +2,16 @@
 
 ## Een nieuw project
 
-We hebben net de inleiding gedaan. Nu gaan we een bibberdraad bouwen!
-Bij dit spel willen we met onze lus rond een draad bewegen, zonder die aan te raken. 
-We willen op het einde geraken met zo weinig mogelijk fouten.
-
-Klik op ``->`` om te beginnen.
+We gaan een bibberdraad bouwen! Bij dit spel willen we met onze lus rond 
+een draad bewegen, zonder die aan te raken. We willen op het einde geraken 
+met zo weinig mogelijk fouten. Klik op ``|Volgende|`` om te beginnen.
 
 ## Signalen
 
 Onze micro:bit moet *voelen* wanneer we de bibberdraad aanraken. 
 Dat doen we met een **signaal**. Signalen laten de micro:bit toe
-om te reageren op iets dat gebeurt in de wereld.
-
-Klik op ``->`` om een eerste signaal te programmeren.
+om te reageren op iets dat gebeurt in de wereld. Klik op ``|Volgende|`` om 
+een eerste signaal te programmeren.
 
 ## Signaal als input
 
@@ -77,7 +74,7 @@ Het zou veel leuker zijn als de micro:bit onze fouten telt. Zo kunnen we
 gemakkelijk onze score zien op het einde van het spel. We willen dan ook
 een knop om een nieuw spel te kunnen starten.
 
-Klik op ``->`` om te beginnen.
+Klik op ``|Volgende|`` om te beginnen.
 
 
 ## Druk op A om te starten
