@@ -42,19 +42,21 @@ input.onPinPressed(TouchPin.P0, function () {
 
 Klik op **pin 0** in de *virtuele micro:bit*. Als je eventjes een kruisje ziet, dan is jouw programma klaar!
 
-```blocks
-input.onPinPressed(TouchPin.P0, function () {
-    basic.showIcon(IconNames.No)
-    basic.clearScreen()
-})
 ```
 
+```
+![](https://raw.githubusercontent.com/MrStandaert/kahiel-mbit/refs/heads/master/assets/microbit-klik-pin0-looped.gif)
 
 ## Verbinden
 
 Verbind je bibberdraad met ``pin 0`` met een draad.
 Verbind jouw lus met de ``GND``. Zo kan de micro:bit een 
 signaal doorsturen als de draad geraakt wordt.
+
+```
+
+```
+![](https://raw.githubusercontent.com/MrStandaert/kahiel-mbit/refs/heads/master/assets/Bibberdraad-schema.png)
 
 
 ## Downloaden en spelen maar
@@ -79,7 +81,7 @@ Klik op ``|Volgende|`` om te beginnen.
 
 ## Druk op A om te starten
 
-Wanneer we op A drukken starten we een nieuw spel. Voeg een 
+Wanneer we op A drukken starten we een nieuw spel. Voeg een blokje 
 ``||input:wanneer knop A wordt ingedrukt||`` toe aan je programmeervak.
 
 
@@ -112,7 +114,7 @@ input.onButtonPressed(Button.A, function () {
 ## Een teller maken
 
 De micro:bit kan voor ons **onthouden** hoevaak de draad werd geraakt
-met een **variabele**. Bij ``||variables||`` maak je een variabele ``teller``. 
+met een **variabele**. Bij ``||variables||`` maak je een variabele ``||variables: teller||``. 
 
 ```blocks
 input.onPinPressed(TouchPin.P0, function () {
