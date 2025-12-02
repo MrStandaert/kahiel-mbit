@@ -10,7 +10,8 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "Bibberdraad.md"
+        "Bibberdraad.md",
+        "Bibberdraad2.md"
     ],
     "testFiles": [
         "test.ts"
