@@ -6,7 +6,7 @@ Welkom op de hospiteerdag van Emanuel Hiel! We bouwen een bibberdraad.
 Daar beweeg je **een lus** rond **de bibberdraad** zonder die aan te raken. 
 Klik op ``|Volgende|`` om naar de volgende stap te gaan.
 
-```blocks
+```template
 input.onPinPressed(TouchPin.P0, function () {
 })
 input.onButtonPressed(Button.A, function () {
