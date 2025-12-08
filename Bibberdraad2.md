@@ -106,19 +106,10 @@ We willen de code in ``||logic: als '<waar>' dan||`` enkel uitvoeren
 **als** we nog levens hebben. Vervang ``||logic: <waar>||`` door 
 ``||logic: levens > 0||``. Klik op het lampje hieronder om jouw code te vergelijken.
 
-```blocks
-let levens = 0
-input.onPinPressed(TouchPin.P0, function () {
-	if(levens > 0){
-        basic.showIcon(IconNames.No)
-        basic.clearScreen()
-    }
-})
-input.onButtonPressed(Button.A, function () {
-    basic.showIcon(IconNames.Heart)
-    levens = 3
-})
 ```
+```
+![](https://raw.githubusercontent.com/MrStandaert/kahiel-mbit/refs/heads/master/assets/clip-voorwaarde_converted.gif)
+
 
 
 ## Levens verliezen en tonen
