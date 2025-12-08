@@ -13,67 +13,55 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## A om te starten, met een hart
+## Start met een hart!
 
 Met **knop A** starten we het spel met 1 leven: *een hartje*. Zet een blok 
-``||basic: Toon pictogram: hartje||`` bij ``||input:wanneer knop A wordt ingedrukt||``. 
-Je mag dit ``|Downloaden|`` en testen!
+``||basic: toon pictogram: hartje||`` bij ``||input:wanneer knop A wordt ingedrukt||``. 
+Je mag dit ``|Downloaden|`` en testen! Druk op de A-knop.
 
 
 ```blocks
+input.onPinPressed(TouchPin.P0, function () {
+})
 input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Heart)
 	
-})
-input.onPinPressed(TouchPin.P0, function () {
 })
 
 ```
 
 ## Een kruisje als we de draad aanraken
 
-Als we de draad aanraken, dan is het spel voorbij. Zet een blok
-``||basic: Toon pictogram: 'X'||`` bij ``||input:wanneer pin p0 wordt aangeraakt||`` 
+Als we de draad aanraken, dan toont de micro:bit een kruisje. Zet een blok
+``||basic: toon pictogram: hartje||`` bij ``||input:wanneer pin p0 wordt aangeraakt||``.
+Verander de tekening naar een *kruisje*. Zet daaronder een ``||basic: Wis scherm||`` blok.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, function () {
     basic.showIcon(IconNames.No)
+    basic.clearScreen()
 })
 input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Heart)
-	
 })
 ```
 
-## Verbinden
+## Verbinden en spelen!
 
 Verbind je bibberdraad met ``pin 0`` met een draad. 
 Verbind jouw lus met de ``GND``. Zo kan de micro:bit voelen wanneer je de draad raakt.
+Heb je alle kabels verbonden? Dan kan je ``|Downloaden|`` en spelen!
 
 ```
 
 ```
 ![](https://raw.githubusercontent.com/MrStandaert/kahiel-mbit/refs/heads/master/assets/Bibberdraad-schema.png)
 
-## Downloaden en spelen maar
-
-Heb je alle kabels verbonden? Dan kan je ``|Downloaden|`` en spelen!
-
-
-```blocks
-input.onPinPressed(TouchPin.P0, function () {
-    basic.showIcon(IconNames.No)
-})
-input.onButtonPressed(Button.A, function () {
-    basic.showIcon(IconNames.Heart)
-	
-})
-```
 
 ## 3 levens met een *variabele*
 
-De micro:bit kan onthouden hoeveel levens we hebben. Dat doen we met een **variabele**.
-Bij ``||variables||`` maak je een variabele ``||variables: levens||``. Daarna zet je 
+Het zou leuk zijn om te spelen met 3 levens. Dat doen we met een **variabele**.
+Bij ``|variabelen|`` maak je een variabele ``||variables: levens||``. Daarna zet je 
 ``||variables: stel levens in op 3||``
 bij ``||input:wanneer knop A wordt ingedrukt||``
 
@@ -82,6 +70,7 @@ bij ``||input:wanneer knop A wordt ingedrukt||``
 let levens = 0
 input.onPinPressed(TouchPin.P0, function () {
     basic.showIcon(IconNames.No)
+    basic.clearScreen()
 })
 input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Heart)
@@ -89,18 +78,20 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Als we nog levens hebben, dan reageert het spel
+## Voorwaarde: als ... dan.
 
-Wanneer we de draad raken moet de micro:bit rekenen. **Als** we méér dan 0 levens hebben, 
-**dan** verliezen we een leven. Bouw ``||logic: als 'levens > 0' dan||`` 
-als eerste blokje bij ``||input:wanneer pin p0 wordt aangeraakt||``. Zet het ``||basic: Toon pictogram: 'X'||``
-daarin.
+We bouwen een **voorwaarde**.  Zet ``||logic: als '<waar>' dan||`` als eerste 
+blokje bij ``||input:wanneer pin p0 wordt aangeraakt||``.  **Als** iets waar is,
+**dan** zal de code in dit blokje uitgevoerd worden. 
+Zet de ``||basic: toon pictogram: 'X'||`` en ``||basic: Wis scherm||`` in dit blokje.
+
 
 ```blocks
 let levens = 0
 input.onPinPressed(TouchPin.P0, function () {
-	if(levens > 3){
+	if(true){
         basic.showIcon(IconNames.No)
+        basic.clearScreen()
     }
 })
 input.onButtonPressed(Button.A, function () {
@@ -109,18 +100,40 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
+## Als we meer dan 0 levens hebben
+
+We willen de code in ``||logic: als '<waar>' dan||`` enkel uitvoeren 
+**als** we nog levens hebben. Vervang ``||logic: <waar>||`` door 
+``||logic: levens > 0||``. Klik op het lampje hieronder om jouw code te vergelijken.
+
+```blocks
+let levens = 0
+input.onPinPressed(TouchPin.P0, function () {
+	if(levens > 0){
+        basic.showIcon(IconNames.No)
+        basic.clearScreen()
+    }
+})
+input.onButtonPressed(Button.A, function () {
+    basic.showIcon(IconNames.Heart)
+    levens = 3
+})
+```
+
+
 ## Levens verliezen en tonen
 
-Om een leven te verliezen, zet je ``||variables: verander levens met -1 ||`` bij de logica.
-Om te tonen hoeveel levens we nog hebben, zetten we ``||basic: Toon nummer||`` met daarin 
-``||variables: levens||``. 
+Om een leven te verliezen, zet je ``||variables: verander levens met -1 ||`` 
+onder ``||basic: Wis scherm||``. Zet daaronder ook ``||basic: toon nummer||`` met daarin 
+``||variables: levens||`` zodat we zien hoeveel levens we nog hebben. 
 Je bent klaar! ``|Downloaden|`` en spelen maar.
 
 ```blocks
 let levens = 0
 input.onPinPressed(TouchPin.P0, function () {
-	if(levens > 3){
+	if(levens > 0){
         basic.showIcon(IconNames.No)
+        basic.clearScreen()
         levens += -1
         basic.showNumber(levens)
     }
@@ -136,14 +149,15 @@ input.onButtonPressed(Button.A, function () {
 
 Misschien wil je een game over beeld? 
 **Als** je geen levens meer hebt, **dan** toon je een doodskop.
-Bouw ``||logic: als 'levens = 0' dan||`` met ``||basic: Toon pictogram 'skull'||``
-op het einde van de logica.
+Bouw ``||logic: als 'levens = 0' dan||`` met ``||basic: toon pictogram 'skull'||``
+onder ``||basic: toon nummer: levens||``.
 
 ```blocks
 let levens = 0
 input.onPinPressed(TouchPin.P0, function () {
-	if(levens > 3){
+	if(levens > 0){
         basic.showIcon(IconNames.No)
+        basic.clearScreen()
         levens += -1
         basic.showNumber(levens)
         if(levens == 0){
@@ -160,16 +174,17 @@ input.onButtonPressed(Button.A, function () {
 
 ## Nu is het aan jou!
 
-Bedenk zelf maar wat leuke ideeën om het spel leuker te maken. Misschien
-wil je een ``||music: Speel 'droevig' 'tot het klaar is'||`` geluidje toevoegen 
-na het tonen van de doodskop? Of een bliepje wanneer de draad geraakt wordt?
-Laat uw creativiteit maar los!
+Bedenk eens hoe je het spel leuker kan maken. Misschien
+wil je een een geluidje toevoegen bij de Game Over, zoals 
+``||music: Speel 'droevig'||``? Of een bliepje wanneer 
+de draad geraakt wordt? Laat je creativiteit maar los!
 
 ```blocks
 let levens = 0
 input.onPinPressed(TouchPin.P0, function () {
-	if(levens > 3){
+	if(levens > 0){
         basic.showIcon(IconNames.No)
+        basic.clearScreen()
         levens += -1
         basic.showNumber(levens)
         if(levens == 0){
