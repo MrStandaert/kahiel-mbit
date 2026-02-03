@@ -1,6 +1,10 @@
 
 > Open deze pagina op [https://mrstandaert.github.io/kahiel-mbit/](https://mrstandaert.github.io/kahiel-mbit/)
 
+## Tutorial
+
+ * [Bibberdraad tutorial](/Bibberdraad2.md)
+
 ## Gebruiken als extensie
 
 Deze repository kan worden toegevoegd als **extensie** in MakeCode.
